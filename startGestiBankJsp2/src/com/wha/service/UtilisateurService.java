@@ -1,0 +1,19 @@
+package com.wha.service;
+
+
+import java.util.List; 
+
+import com.wha.model.Utilisateur;
+
+public interface UtilisateurService {
+	public void addUtilisateur(Utilisateur utilisateur);
+	
+	public  List<Utilisateur> getAllUtilisateur();
+	
+	public void deletUtilisateur(Integer idUtilisateur);
+	
+	public Utilisateur getUtilisateur(int Utilisateurid);
+	
+	public Utilisateur updateutilisateur (Utilisateur utilisateur);
+
+}
