@@ -28,13 +28,29 @@ public class EmployeeController {
 	private EmployeeService employeeService;
 
 	@RequestMapping(value = "/")
+	public ModelAndView accueil(ModelAndView model) throws IOException {
+		model.setViewName("accueil");
+		return model;
+	}
+	@RequestMapping(value = "/formulaire", method = RequestMethod.POST)
+	public ModelAndView nouveauClient(ModelAndView model) throws IOException {
+		model.setViewName("formulaire");
+		return model;
+	}
+	@RequestMapping(value = "/formconnexion", method = RequestMethod.POST)
+	public ModelAndView formconnexion(ModelAndView model) throws IOException {
+		model.setViewName("connexion");
+		return model;
+	}
+	
+	/*@RequestMapping(value = "/")
 	public ModelAndView listEmployee(ModelAndView model) throws IOException {
 		List<Employee> listEmployee = employeeService.getAllEmployees();
 		model.addObject("listEmployee", listEmployee);
 		model.setViewName("home");
 		return model;
 	}
-
+*/
 	@RequestMapping(value = "/newEmployee", method = RequestMethod.GET)
 	public ModelAndView newContact(ModelAndView model) {
 		Employee employee = new Employee();
