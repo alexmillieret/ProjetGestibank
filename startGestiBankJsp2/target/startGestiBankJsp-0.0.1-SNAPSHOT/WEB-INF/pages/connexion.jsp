@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     	<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+    		<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -18,7 +19,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="login"></label>  
   <div class="col-md-5">
-  <fmt:message key="c.login" var="placeholderlogin"></fmt:message>
+  <fmt:message key="c.login" var="placeholderlogin"/>
   <input id="login" name="login" type="text" placeholder="${placeholderlogin}" class="form-control input-md" required="">
   <span class="erreur">${form.erreurs['login']}</span>
   <span class="help-block"><fmt:message key="c.nom"></fmt:message></span>  
@@ -29,7 +30,8 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="password"></label>
   <div class="col-md-4">
-    <input id="password" name="password" type="password" placeholder="Mot de passe" class="form-control input-md" required="">
+    <fmt:message key="c.mdp" var="placeholdermdp"/>
+    <input id="password" name="password" type="password" placeholder="${placeholdermdp}" class="form-control input-md" required="">
     <span class="erreur">${form.erreurs['password']}</span>
     <span class="help-block"><fmt:message key="c.mdp"></fmt:message></span>
   </div>
@@ -39,7 +41,8 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="connexion"></label>
   <div class="col-md-4">
-    <button id="connexion" name="connexion" class="btn btn-success">Connexion</button>
+   <fmt:message key="c.connexion" var="boutonconnexion"/>
+    <button id="connexion" name="connexion" class="btn btn-success">${boutonconnexion}</button>
   </div>
 </div>
  <p class="${empty form.erreurs ? 'succes' : 'erreur'}">${form.resultat}</p>

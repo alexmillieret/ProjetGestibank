@@ -12,15 +12,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
 
 @Entity
-@Inheritance(strategy= InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name="TypeUser")
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 @DiscriminatorValue("USER")
-public class Utilisateur implements Serializable {
+@DiscriminatorColumn(name="ROLE")
+public abstract class Utilisateur implements Serializable{
 	
 	private static final long serialVersionUID = -3465813074586302847L;
 	// zone  d'Atributs
@@ -31,16 +32,22 @@ public class Utilisateur implements Serializable {
 	private int idUtilisateur;
 	
 	@Column
+	private String nomUtilisateur;
+	
+	@Column
+	private String motDePasse;
+	
+	@Column(nullable=false)
 	private String nom;
 	
-	@Column
+	@Column(nullable=false)
 	private String prenom;
 	
-	@Column
+	@Column(nullable=false)
 	private String mail;
 	
-	@Column
-	private String adresse;
+	@OneToOne
+	private Adresse adresse;
 	
 	@Column
 	private int tel;
@@ -52,6 +59,26 @@ public class Utilisateur implements Serializable {
 	}
 	
 	
+	public String getNomUtilisateur() {
+		return nomUtilisateur;
+	}
+
+
+	public void setNomUtilisateur(String nomUtilisateur) {
+		this.nomUtilisateur = nomUtilisateur;
+	}
+
+
+	public String getMotDePasse() {
+		return motDePasse;
+	}
+
+
+	public void setMotDePasse(String motDePasse) {
+		this.motDePasse = motDePasse;
+	}
+
+
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
@@ -72,11 +99,12 @@ public class Utilisateur implements Serializable {
 		this.mail = mail;
 	}
 
-	public String getAdresse() {
+	
+	public Adresse getAdresse() {
 		return adresse;
 	}
 
-	public void setAdresse(String adresse) { 
+	public void setAdresse(Adresse adresse) { 
 		this.adresse = adresse;
 	}
 
