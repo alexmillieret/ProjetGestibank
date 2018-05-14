@@ -4,13 +4,20 @@ import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "DEMANDES")
 public class Demande implements Serializable {
 
 	//Attributs
 	@Id
-	private int id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int idDemande;
 	@Column
 	private Date dateCreation;
 	@Column
@@ -21,13 +28,21 @@ public class Demande implements Serializable {
 	}
 
 	
-	//Get Set
-	public int getId() {
-		return id;
+	public Demande(int idDemande, Date dateCreation, Date dateReponse) {
+		super();
+		this.idDemande = idDemande;
+		this.dateCreation = dateCreation;
+		this.dateReponse = dateReponse;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+
+	//Get Set
+	public int getIdDemande() {
+		return idDemande;
+	}
+
+	public void setIdDemande(int idDemande) {
+		this.idDemande = idDemande;
 	}
 
 	public Date getDateCreation() {
