@@ -33,7 +33,7 @@ public abstract class Utilisateur implements Serializable{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int idUtilisateur;
 	
-	@Column
+	@Column(unique=true)
 	private String nomUtilisateur;
 	
 	@Column

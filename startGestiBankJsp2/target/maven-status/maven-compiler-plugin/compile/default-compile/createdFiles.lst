@@ -24,6 +24,7 @@ com\wha\dao\EmployeeDAO.class
 com\wha\model\Client.class
 com\wha\dao\AdresseDAOImpl.class
 com\wha\service\AdministrateurService.class
+com\wha\model\Demande.class
 com\wha\dao\UtilisateurDAO.class
 com\wha\service\EmployeeService.class
 com\wha\dao\EmployeeDAOImpl.class

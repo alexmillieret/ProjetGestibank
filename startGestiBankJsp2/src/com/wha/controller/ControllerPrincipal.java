@@ -1,6 +1,6 @@
 package com.wha.controller;
 
-import java.io.IOException; 
+import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -49,38 +49,39 @@ public class ControllerPrincipal {
 	private AdministrateurService administrateurService;
 	@Autowired
 	private AgentService agentService;
-	
+
 	@RequestMapping(value = "/")
 	public ModelAndView accueil(ModelAndView model) {
-		//crétion d'un client au démarrage
-	Client client = new Client();
-	client.setMail("alex.millieret@free.fr");
-	client.setNom("millieret");
-	client.setPrenom("alex");
-	client.setNomUtilisateur("client");
-	client.setMotDePasse("client");
-	Adresse adresseClient = new Adresse();
-	adresseClient.setVille("Annecy");
-	client.setAdresse(adresseClient);
-	clientService.addClient(client);
-		//création d'un admin au démarrage
-	Administrateur admin = new Administrateur();
-	admin.setMail("admin@free.fr");
-	admin.setNom("admin");
-	admin.setNomUtilisateur("admin");
-	admin.setMotDePasse("admin");
-	admin.setPrenom("admin");
-	administrateurService.addAdministrateur(admin);
-	//création d'un agent au démarrage
-	Agent agent = new Agent();
-	agent.setMail("agent@free.fr");
-	agent.setNom("agent");
-	agent.setPrenom("agent");
-	agentService.addAgent(agent);
-		
+		// crétion d'un client au démarrage
+		Client client = new Client();
+		client.setMail("alex.millieret@free.fr");
+		client.setNom("millieret");
+		client.setPrenom("alex");
+		client.setNomUtilisateur("client");
+		client.setMotDePasse("client");
+		Adresse adresseClient = new Adresse();
+		adresseClient.setVille("Annecy");
+		client.setAdresse(adresseClient);
+		clientService.addClient(client);
+		// création d'un admin au démarrage
+		Administrateur admin = new Administrateur();
+		admin.setMail("admin@free.fr");
+		admin.setNom("admin");
+		admin.setNomUtilisateur("admin");
+		admin.setMotDePasse("admin");
+		admin.setPrenom("admin");
+		administrateurService.addAdministrateur(admin);
+		// création d'un agent au démarrage
+		Agent agent = new Agent();
+		agent.setMail("agent@free.fr");
+		agent.setNom("agent");
+		agent.setPrenom("agent");
+		agentService.addAgent(agent);
+
 		model.setViewName("accueil");
 		return model;
 	}
+
 	@RequestMapping(value = "/newClient", method = RequestMethod.GET)
 	public ModelAndView nouveauClient(ModelAndView model) {
 		Adresse adresse = new Adresse();
@@ -90,26 +91,40 @@ public class ControllerPrincipal {
 		model.setViewName("formulaire");
 		return model;
 	}
+
 	@RequestMapping(value = "/formconnexion", method = RequestMethod.POST)
 	public ModelAndView formconnexion(ModelAndView model) throws IOException {
 		model.setViewName("connexion");
 		return model;
 	}
-	
+
 	@RequestMapping(value = "/redirectionVersEspaceCorrespondant", method = RequestMethod.POST)
 	public ModelAndView connect(HttpServletRequest request) {
 		String nomUtilisateur = request.getParameter("nomUtilisateur");
 		String motDePasse = request.getParameter("motDePasse");
+		try {
+		Utilisateur utilisateur = utilisateurService.getUser(nomUtilisateur, motDePasse);
 		String role = utilisateurService.getRoleUtilisateur(nomUtilisateur, motDePasse);
-		if(role=="ADMINISTRATEUR") {
-			return new ModelAndView("espaceAdmin");
-		} else if( role == "CLIENT" ){
-			return new ModelAndView("espaceclient");
-		}else if(role=="AGENT"){
-		return new ModelAndView("espaceAgent");
-	}else return new ModelAndView("connexion");
+		if(role.equals("ADMINISTRATEUR")) {
+		ModelAndView model = new ModelAndView("espaceAdmin");
+		model.addObject("admin", utilisateur);
+		return model;
+		} else if(role.equals("CLIENT")){
+			ModelAndView model = new ModelAndView("espaceclient");
+			model.addObject("client", utilisateur);
+			return model;
+		}else if(role.equals("AGENT")){
+			ModelAndView model = new ModelAndView("espaceAgent");
+			model.addObject("agent", utilisateur);
+			return model;
 	}
-	
+		}catch (Exception e){
+	}
+		ModelAndView model = new ModelAndView("connexion");
+		String message = "Utilisateur ou mote de passe incorrect";
+		model.addObject("message", message);
+		return model;
+	}
 	/*@RequestMapping(value = "/")
 	public ModelAndView listEmployee(ModelAndView model) throws IOException {
 		List<Employee> listEmployee = employeeService.getAllEmployees();

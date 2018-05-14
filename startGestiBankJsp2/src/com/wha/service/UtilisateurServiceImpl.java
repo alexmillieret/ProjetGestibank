@@ -55,5 +55,8 @@ public class UtilisateurServiceImpl implements UtilisateurService {
 	public String getRoleUtilisateur(String nomUtilisateur, String motDePasse) {
 		return utilisateurDAO.getRoleUtilisateur(nomUtilisateur, motDePasse);
 	}
+	public Utilisateur getUser(String nomUtilisateur, String motDePasse) {
+		return utilisateurDAO.getUser(nomUtilisateur, motDePasse);
+	}
 
 }

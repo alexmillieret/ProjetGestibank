@@ -45,7 +45,11 @@ public class UtilisateurDAOImpl implements UtilisateurDAO {
 	        }
 	 
 	    }
-	 
+	    @Override
+	    public Utilisateur getUser(String nomUtilisateur, String motDePasse) {
+	        return (Utilisateur) sessionFactory.getCurrentSession().createQuery("from Utilisateur as user where nomUtilisateur='"+nomUtilisateur+"' and motDePasse='"+motDePasse+"'").uniqueResult();
+	    }
+	    
 	    public Utilisateur getUtilisateur(int utilisateurid) {
 	        return (Utilisateur) sessionFactory.getCurrentSession().get(
 	                Utilisateur.class, utilisateurid);

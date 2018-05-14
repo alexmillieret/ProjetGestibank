@@ -6,27 +6,12 @@
 <head>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/bootstrap.css" />
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Espace Client</title>
+<title>Espace Agent</title>
 </head>
 <body>
 <div class="enteteEspaceClient">
 <img id="logo4" src="${pageContext.request.contextPath}/resources/images/logo2.png" alt="logo2" />
-Bienvenue dans l'espace client
+Bienvenue dans l'espace Conseiller
 </div>
-<div class="bodyclient">
-<form name="verscompte" action="Controller?page=compte" method= "post">
-<input class="myButton" type="submit" value="Demande de modification / Ajout de comptes">
-</form>
-</div>
-<div class="bodyclient">
-<input class="myButton" type="submit" value="Effectuer une transation">
-</div>
-<div class="bodyclient">
-<input class="myButton" type="submit" value="Voir mes notifications">
-</div>
-<div class="bodyclient">
-<input class="myButton" type="submit" value="Visualiser mes comptes">
-</div>
-<c:import url="footer.jsp" />
 </body>
 </html>

@@ -14,6 +14,7 @@ public interface UtilisateurDAO {
 	public Utilisateur updateUtilisateur(Utilisateur utilisateur);
 	
 	public Utilisateur getUtilisateur(int idUtilisateur);
+	public Utilisateur getUser(String nomUtilisateur, String motDePasse);
 	
 	public String getRoleUtilisateur(String nomUtilisateur, String motDePasse);
 }
