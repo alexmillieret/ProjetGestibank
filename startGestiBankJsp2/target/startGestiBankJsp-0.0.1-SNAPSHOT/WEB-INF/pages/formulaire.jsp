@@ -2,6 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/bootstrap.css" />
@@ -14,7 +15,8 @@
 <fmt:setBundle basename="com.wha.international/message"/>
 
 
-		<form class="form-horizontal" method="get" id="formcrea" action="CreationClient">
+<%-- 		<form class="form-horizontal" method="get" id="formcrea" action="demandeCreationClient"> --%>
+			<form:form class="form-horizontal" method="post" action="demandeCreationClient" modelAttribute="demande">
 			<fieldset>
 
 				<legend><fmt:message key="f.ouvcompte"></fmt:message></legend>
@@ -22,8 +24,7 @@
 				<div class="form-group row text-right fcrea">
 					<label class="col-md-2 control-label" for="txtfnom"><fmt:message key="f.nom"></fmt:message> : </label>
 					<div class="col-md-6">
-						<input id="txtfnom" name="txtfnom" type="text" placeholder="<fmt:message key="f.nom"></fmt:message>"
-							class="form-control input-md" >
+						<form:input path="nom"/>
 
 					</div>
 					
@@ -144,7 +145,7 @@
 
 			</fieldset>
 
-		</form>
+		</form:form>
  <p class="info">${ form.resultat }</p>
 	<c:import url="footer.jsp" />
 </body>

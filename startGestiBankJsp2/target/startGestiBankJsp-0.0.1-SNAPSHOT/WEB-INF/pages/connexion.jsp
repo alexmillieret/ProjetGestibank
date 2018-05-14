@@ -65,6 +65,10 @@
 			</c:if>
 		</fieldset>
 	</form:form>
+	<div class="erreurr">
+	${message}
+	</div>
+	
 	<c:import url="footer.jsp" />
 </body>
 </html>

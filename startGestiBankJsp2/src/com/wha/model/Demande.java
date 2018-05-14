@@ -14,20 +14,21 @@ import javax.persistence.Table;
 @Table(name = "DEMANDES")
 public class Demande implements Serializable {
 
-	//Attributs
+	// Attributs
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idDemande;
-	@Column
+
+	private String nom;
+
 	private Date dateCreation;
-	@Column
+
 	private Date dateReponse;
 
-	//constructeur
+	// constructeur
 	public Demande() {
 	}
 
-	
 	public Demande(int idDemande, Date dateCreation, Date dateReponse) {
 		super();
 		this.idDemande = idDemande;
@@ -35,8 +36,7 @@ public class Demande implements Serializable {
 		this.dateReponse = dateReponse;
 	}
 
-
-	//Get Set
+	// Get Set
 	public int getIdDemande() {
 		return idDemande;
 	}
@@ -59,6 +59,14 @@ public class Demande implements Serializable {
 
 	public void setDateReponse(Date dateReponse) {
 		this.dateReponse = dateReponse;
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
 	}
 
 }
