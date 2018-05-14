@@ -121,7 +121,7 @@ public class ControllerPrincipal {
 		}catch (Exception e){
 	}
 		ModelAndView model = new ModelAndView("connexion");
-		String message = "Utilisateur ou mote de passe incorrect";
+		String message = "Utilisateur ou mot de passe incorrect";
 		model.addObject("message", message);
 		return model;
 	}
