@@ -52,5 +52,8 @@ public class UtilisateurServiceImpl implements UtilisateurService {
 	public void setUtilisateurDAO(UtilisateurDAO utilisateurDAO){
 		this.utilisateurDAO = utilisateurDAO;
 	}
+	public String getRoleUtilisateur(String nomUtilisateur, String motDePasse) {
+		return utilisateurDAO.getRoleUtilisateur(nomUtilisateur, motDePasse);
+	}
 
 }

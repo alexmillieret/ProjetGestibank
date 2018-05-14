@@ -11,7 +11,7 @@
 <body>
 <fmt:setBundle basename="com.wha.international/message"/>
 <div class="enteteEspaceClient">
-<img id="logo4" src="images/logo2.png" alt="logo4" />
+<img id="logo4" src="${pageContext.request.contextPath}/resources/images/logo2.png" alt="logo2" />
 Bienvenue dans l'espace Administrateur
 </div>
 <div class="bodyclient">

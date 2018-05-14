@@ -21,6 +21,9 @@ import com.wha.model.Employee;
 import com.wha.model.Utilisateur;
 import com.wha.service.EmployeeService;
 import com.wha.service.UtilisateurService;
+
+import jdk.nashorn.internal.ir.RuntimeNode.Request;
+
 import com.wha.service.AdministrateurService;
 import com.wha.service.AdresseService;
 import com.wha.service.AgentService;
@@ -54,6 +57,8 @@ public class ControllerPrincipal {
 	client.setMail("alex.millieret@free.fr");
 	client.setNom("millieret");
 	client.setPrenom("alex");
+	client.setNomUtilisateur("client");
+	client.setMotDePasse("client");
 	Adresse adresseClient = new Adresse();
 	adresseClient.setVille("Annecy");
 	client.setAdresse(adresseClient);
@@ -62,6 +67,8 @@ public class ControllerPrincipal {
 	Administrateur admin = new Administrateur();
 	admin.setMail("admin@free.fr");
 	admin.setNom("admin");
+	admin.setNomUtilisateur("admin");
+	admin.setMotDePasse("admin");
 	admin.setPrenom("admin");
 	administrateurService.addAdministrateur(admin);
 	//création d'un agent au démarrage
@@ -87,6 +94,20 @@ public class ControllerPrincipal {
 	public ModelAndView formconnexion(ModelAndView model) throws IOException {
 		model.setViewName("connexion");
 		return model;
+	}
+	
+	@RequestMapping(value = "/redirectionVersEspaceCorrespondant", method = RequestMethod.POST)
+	public ModelAndView connect(HttpServletRequest request) {
+		String nomUtilisateur = request.getParameter("nomUtilisateur");
+		String motDePasse = request.getParameter("motDePasse");
+		String role = utilisateurService.getRoleUtilisateur(nomUtilisateur, motDePasse);
+		if(role=="ADMINISTRATEUR") {
+			return new ModelAndView("espaceAdmin");
+		} else if( role == "CLIENT" ){
+			return new ModelAndView("espaceclient");
+		}else if(role=="AGENT"){
+		return new ModelAndView("espaceAgent");
+	}else return new ModelAndView("connexion");
 	}
 	
 	/*@RequestMapping(value = "/")

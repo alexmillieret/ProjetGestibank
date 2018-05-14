@@ -27,9 +27,14 @@ public class UtilisateurDAOImpl implements UtilisateurDAO {
 	    @SuppressWarnings("unchecked")
 	    public List<Utilisateur> getAllUtilisateur() {
 	 
-	        return sessionFactory.getCurrentSession().createQuery("from utilisateur")
+	        return sessionFactory.getCurrentSession().createQuery("from Utilisateur")
 	                .list();
 	    }
+	    public String getRoleUtilisateur(String nomUtilisateur, String motDePasse) {
+	   	 
+	        return (String) sessionFactory.getCurrentSession().createQuery("select user.class from Utilisateur as user where nomUtilisateur='"+nomUtilisateur+"' and motDePasse='"+motDePasse+"'").uniqueResult();
+	    }
+
 	 
 	    @Override
 	    public void deleteUtilisateur(Integer idUtilisateur) {
@@ -46,6 +51,7 @@ public class UtilisateurDAOImpl implements UtilisateurDAO {
 	                Utilisateur.class, utilisateurid);
 	    }
 	 
+	    
 	    @Override
 	    public Utilisateur updateUtilisateur(Utilisateur utilisateur) {
 	        sessionFactory.getCurrentSession().update(utilisateur);

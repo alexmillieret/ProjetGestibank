@@ -15,5 +15,7 @@ public interface UtilisateurService {
 	public Utilisateur getUtilisateur(int idUtilisateur);
 	
 	public Utilisateur updateUtilisateur (Utilisateur utilisateur);
+	
+	public String getRoleUtilisateur(String nomUtilisateur, String motDePasse);
 
 }

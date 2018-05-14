@@ -15,4 +15,5 @@ public interface UtilisateurDAO {
 	
 	public Utilisateur getUtilisateur(int idUtilisateur);
 	
+	public String getRoleUtilisateur(String nomUtilisateur, String motDePasse);
 }
