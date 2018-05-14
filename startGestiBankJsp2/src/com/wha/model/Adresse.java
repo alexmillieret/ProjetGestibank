@@ -8,24 +8,24 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Column;
+import javax.persistence.Embeddable;
 
-@Entity
-@Table(name="Adresse")
+@Embeddable
 public class Adresse implements Serializable{
 
 	private static final long serialVersionUID = 1L;
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+//	@Id
+//	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int idAdresse;
-@Column
+//@Column
 	private Integer numero;
-	@Column
+//	@Column
 	private String rue;
-	@Column
+//	@Column
 	private String ville;
-	@Column
+//	@Column
 	private String codePostal;
-	@Column
+//	@Column
 	private String pays;
 	
 	public Integer getNumero() {
