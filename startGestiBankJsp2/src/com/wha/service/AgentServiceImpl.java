@@ -12,7 +12,7 @@ import com.wha.model.Agent;
 
 @Service
 @Transactional
-public class AgentServiceImpl implements AgentDAO {
+public class AgentServiceImpl implements AgentService {
 
 	@Autowired
 	private AgentDAO agentDAO;

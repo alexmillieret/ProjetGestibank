@@ -27,7 +27,7 @@ public class AgentDAOImpl implements AgentDAO {
 	    @SuppressWarnings("unchecked")
 	    public List<Agent> getAllAgent() {
 	 
-	        return sessionFactory.getCurrentSession().createQuery("from Employee")
+	        return sessionFactory.getCurrentSession().createQuery("from utilisateur where role='agent'")
 	                .list();
 	    }
 	 

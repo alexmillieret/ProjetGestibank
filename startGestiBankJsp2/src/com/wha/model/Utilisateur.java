@@ -23,7 +23,7 @@ import javax.persistence.Table;
 @DiscriminatorColumn(name="ROLE")
 public abstract class Utilisateur implements Serializable{
 	
-	private static final long serialVersionUID = -3465813074586302847L;
+	
 	// zone  d'Atributs
 	
 	
@@ -124,9 +124,6 @@ public abstract class Utilisateur implements Serializable{
 		this.idUtilisateur = idUtilisateur;
 	}
 	
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
 
 
 

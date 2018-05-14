@@ -15,7 +15,7 @@ import javax.persistence.Table;
 
 @Entity
 @DiscriminatorValue("CLIENT")
-public class Client extends Utilisateur{
+public class Client extends Utilisateur implements Serializable{
 	
 
 	@Column
@@ -24,9 +24,6 @@ public class Client extends Utilisateur{
 	@Column
 	private String situationMatrimoniale;
 	
-public Client() {
-	super();
-}
 	
 	//Zone Getters/Setters
 	

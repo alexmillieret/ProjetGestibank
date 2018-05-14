@@ -10,10 +10,10 @@ public interface AgentService {
 	
 	public  List<Agent> getAllAgent();
 	
-	public void deletAgent(Integer idAgent);
+	public void deleteAgent(Integer idAgent);
 	
 	public Agent getAgent(int Agentid);
 	
-	public Agent updateagent (Agent agent);
+	public Agent updateAgent (Agent agent);
 
 }

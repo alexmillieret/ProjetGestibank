@@ -2,18 +2,22 @@ C:\Users\Alex\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\service\Employe
 C:\Users\Alex\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\dao\UtilisateurDAO.java
 C:\Users\Alex\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\service\AdresseServiceImpl.java
 C:\Users\Alex\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\model\Agent.java
+C:\Users\Alex\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\model\Administrateur.java
 C:\Users\Alex\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\controller\ControllerPrincipal.java
 C:\Users\Alex\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\model\Employee.java
 C:\Users\Alex\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\service\ClientServiceImpl.java
 C:\Users\Alex\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\dao\AdresseDAO.java
+C:\Users\Alex\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\dao\AdministrateurDAO.java
 C:\Users\Alex\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\service\UtilisateurServiceImpl.java
 C:\Users\Alex\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\model\Client.java
 C:\Users\Alex\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\dao\EmployeeDAO.java
 C:\Users\Alex\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\service\UtilisateurService.java
+C:\Users\Alex\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\service\AdministrateurServiceImpl.java
 C:\Users\Alex\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\dao\ClientDAOImpl.java
 C:\Users\Alex\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\model\Utilisateur.java
 C:\Users\Alex\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\service\AdresseService.java
 C:\Users\Alex\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\dao\ClientDAO.java
+C:\Users\Alex\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\dao\AdministrateurDAOImpl.java
 C:\Users\Alex\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\dao\AdresseDAOImpl.java
 C:\Users\Alex\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\dao\EmployeeDAOImpl.java
 C:\Users\Alex\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\model\Adresse.java
@@ -24,3 +28,4 @@ C:\Users\Alex\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\service\AgentSe
 C:\Users\Alex\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\dao\AgentDAOImpl.java
 C:\Users\Alex\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\dao\UtilisateurDAOImpl.java
 C:\Users\Alex\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\service\EmployeeServiceImpl.java
+C:\Users\Alex\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\service\AdministrateurService.java

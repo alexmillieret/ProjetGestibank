@@ -30,12 +30,12 @@ public class ClientServiceImpl implements ClientService {
  
     @Override
     @Transactional
-    public void deleteClient(Integer clientId) {
-        clientDAO.deleteClient(clientId);
+    public void deleteClient(Integer idUtilisateur) {
+        clientDAO.deleteClient(idUtilisateur);
     }
  
-    public Client getClient(int clientId) {
-        return clientDAO.getClient(clientId);
+    public Client getClient(int idUtilisateur) {
+        return clientDAO.getClient(idUtilisateur);
     }
  
     public Client updateClient(Client client) {

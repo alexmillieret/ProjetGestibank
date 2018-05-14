@@ -10,10 +10,10 @@ public interface UtilisateurService {
 	
 	public  List<Utilisateur> getAllUtilisateur();
 	
-	public void deletUtilisateur(Integer idUtilisateur);
+	public void deleteUtilisateur(Integer idUtilisateur);
 	
-	public Utilisateur getUtilisateur(int Utilisateurid);
+	public Utilisateur getUtilisateur(int idUtilisateur);
 	
-	public Utilisateur updateutilisateur (Utilisateur utilisateur);
+	public Utilisateur updateUtilisateur (Utilisateur utilisateur);
 
 }

@@ -7,9 +7,11 @@ com\wha\service\AgentService.class
 com\wha\dao\AgentDAO.class
 com\wha\service\UtilisateurServiceImpl.class
 com\wha\model\Adresse.class
+com\wha\dao\AdministrateurDAOImpl.class
 com\wha\service\AgentServiceImpl.class
 com\wha\service\ClientService.class
 com\wha\dao\ClientDAO.class
+com\wha\model\Administrateur.class
 com\wha\service\UtilisateurService.class
 com\wha\dao\UtilisateurDAOImpl.class
 com\wha\service\AdresseServiceImpl.class
@@ -17,10 +19,13 @@ com\wha\dao\AgentDAOImpl.class
 com\wha\service\AdresseService.class
 com\wha\model\Agent.class
 com\wha\service\ClientServiceImpl.class
+com\wha\service\AdministrateurServiceImpl.class
 com\wha\dao\EmployeeDAO.class
 com\wha\model\Client.class
 com\wha\dao\AdresseDAOImpl.class
+com\wha\service\AdministrateurService.class
 com\wha\dao\UtilisateurDAO.class
 com\wha\service\EmployeeService.class
 com\wha\dao\EmployeeDAOImpl.class
+com\wha\dao\AdministrateurDAO.class
 com\wha\dao\ClientDAOImpl.class

@@ -13,8 +13,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.wha.model.Administrateur;
+import com.wha.model.Adresse;
+import com.wha.model.Agent;
+import com.wha.model.Client;
 import com.wha.model.Employee;
+import com.wha.model.Utilisateur;
 import com.wha.service.EmployeeService;
+import com.wha.service.UtilisateurService;
+import com.wha.service.AdministrateurService;
+import com.wha.service.AdresseService;
+import com.wha.service.AgentService;
+import com.wha.service.ClientService;
 
 @Controller
 public class ControllerPrincipal {
@@ -26,14 +36,51 @@ public class ControllerPrincipal {
 
 	@Autowired
 	private EmployeeService employeeService;
-
+	@Autowired
+	private ClientService clientService;
+	@Autowired
+	private AdresseService adresseService;
+	@Autowired
+	private UtilisateurService utilisateurService;
+	@Autowired
+	private AdministrateurService administrateurService;
+	@Autowired
+	private AgentService agentService;
+	
 	@RequestMapping(value = "/")
-	public ModelAndView accueil(ModelAndView model) throws IOException {
+	public ModelAndView accueil(ModelAndView model) {
+		//crétion d'un client au démarrage
+	Client client = new Client();
+	client.setMail("alex.millieret@free.fr");
+	client.setNom("millieret");
+	client.setPrenom("alex");
+	Adresse adresseClient = new Adresse();
+	adresseClient.setVille("Annecy");
+	adresseService.addAdresse(adresseClient);
+	client.setAdresse(adresseClient);
+	clientService.addClient(client);
+		//création d'un admin au démarrage
+	Administrateur admin = new Administrateur();
+	admin.setMail("admin@free.fr");
+	admin.setNom("admin");
+	admin.setPrenom("admin");
+	administrateurService.addAdministrateur(admin);
+	//création d'un agent au démarrage
+	Agent agent = new Agent();
+	agent.setMail("agent@free.fr");
+	agent.setNom("agent");
+	agent.setPrenom("agent");
+	agentService.addAgent(agent);
+		
 		model.setViewName("accueil");
 		return model;
 	}
-	@RequestMapping(value = "/formulaire", method = RequestMethod.POST)
-	public ModelAndView nouveauClient(ModelAndView model) throws IOException {
+	@RequestMapping(value = "/newClient", method = RequestMethod.GET)
+	public ModelAndView nouveauClient(ModelAndView model) {
+		Adresse adresse = new Adresse();
+		Client client = new Client();
+		client.setAdresse(adresse);
+		model.addObject("client", client);
 		model.setViewName("formulaire");
 		return model;
 	}

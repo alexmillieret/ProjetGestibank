@@ -36,7 +36,7 @@
 <div class="col-sm-8">
 <div class="row">
 			<div class="col-sm-12">
-						<form name="formulaire" action="formulaire" method= "post"> 
+						<form name="newClient" action="newClient" method= "get"> 
 <input class="btn btn-primary btn-lg" type="submit" value="<fmt:message key="acc.devenirclient"></fmt:message>"></td>
 
 </form> 

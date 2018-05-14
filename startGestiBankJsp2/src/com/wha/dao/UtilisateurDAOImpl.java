@@ -27,7 +27,7 @@ public class UtilisateurDAOImpl implements UtilisateurDAO {
 	    @SuppressWarnings("unchecked")
 	    public List<Utilisateur> getAllUtilisateur() {
 	 
-	        return sessionFactory.getCurrentSession().createQuery("from Employee")
+	        return sessionFactory.getCurrentSession().createQuery("from utilisateur")
 	                .list();
 	    }
 	 

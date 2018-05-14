@@ -12,7 +12,7 @@ import com.wha.model.Utilisateur;
 
 @Service
 @Transactional
-public class UtilisateurServiceImpl implements UtilisateurDAO {
+public class UtilisateurServiceImpl implements UtilisateurService {
 
 	@Autowired
 	private UtilisateurDAO utilisateurDAO;

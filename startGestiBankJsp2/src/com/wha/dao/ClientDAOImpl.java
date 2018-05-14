@@ -20,7 +20,7 @@ public class ClientDAOImpl implements ClientDAO {
     @SuppressWarnings("unchecked")
     public List<Client> getAllClients() {
  
-        return sessionFactory.getCurrentSession().createQuery("from Client")
+        return sessionFactory.getCurrentSession().createQuery("from Utilisateur where role='client'")
                 .list();
     }
  

@@ -14,7 +14,7 @@
 <fmt:setBundle basename="com.wha.international/message"/>
 
 
-		<form class="form-horizontal" method="post" id="formcrea" action="CreationClient">
+		<form class="form-horizontal" method="get" id="formcrea" action="CreationClient">
 			<fieldset>
 
 				<legend><fmt:message key="f.ouvcompte"></fmt:message></legend>

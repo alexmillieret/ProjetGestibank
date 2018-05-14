@@ -20,7 +20,7 @@ public class AdministrateurDAOImpl implements AdministrateurDAO {
     @SuppressWarnings("unchecked")
     public List<Administrateur> getAllAdministrateurs() {
  
-        return sessionFactory.getCurrentSession().createQuery("from Administrateur")
+        return sessionFactory.getCurrentSession().createQuery("from utilisateur where role='administrateur'")
                 .list();
     }
  
