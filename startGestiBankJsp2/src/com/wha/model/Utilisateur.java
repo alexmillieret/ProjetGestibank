@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorValue;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -46,7 +47,7 @@ public abstract class Utilisateur implements Serializable{
 	@Column(nullable=false)
 	private String mail;
 	
-	@OneToOne
+	@Embedded
 	private Adresse adresse;
 	
 	@Column

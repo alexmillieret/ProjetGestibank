@@ -13,7 +13,8 @@
 <fmt:setBundle basename="com.wha.international/message"/>
 <c:import url="header.jsp" />
 
-<form class="form-horizontal" method="post" action="<c:url value="/Connexion" />">
+
+<form:form class="form-horizontal" action="redirectionVersEspaceCorrespondant" method="post" modelAttribute="utilisateur">
 <fieldset>
 <!-- Text input-->
 <div class="form-group">
@@ -53,7 +54,7 @@
                 	<p class="succes"><fmt:message key="c.vousetesconnecter"></fmt:message> : ${sessionScope.sessionUtilisateur.nomUtilisateur}</p>
                 </c:if>
 </fieldset>
-</form>
+</form:form>
 <c:import url="footer.jsp" />
 </body>
 </html>

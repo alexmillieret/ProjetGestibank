@@ -56,7 +56,6 @@ public class ControllerPrincipal {
 	client.setPrenom("alex");
 	Adresse adresseClient = new Adresse();
 	adresseClient.setVille("Annecy");
-	adresseService.addAdresse(adresseClient);
 	client.setAdresse(adresseClient);
 	clientService.addClient(client);
 		//création d'un admin au démarrage
