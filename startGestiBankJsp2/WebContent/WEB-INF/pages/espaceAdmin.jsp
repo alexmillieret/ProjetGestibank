@@ -20,6 +20,27 @@ Bienvenue dans l'espace Administrateur
 <div class="bodyclient">
 <input class="myButton" type="submit" value="Gestion des affectations">
 </div>
+
+
+<h1>Test recup demandes</h1>
+
+	<th>Id</th>
+	<th>Nom</th>
+
+	<table border="1">
+
+		<c:forEach var="demande" items="${listDemande}">
+			<tr>
+				<td>${demande.idDemande}</td>
+				<td>${demande.nom}</td>
+				<td><a href="editEmployee?id=${demande.idDemande}">Edit</a>
+					&nbsp;&nbsp;&nbsp;&nbsp; <a
+					href="deleteDemande?id=${demande.idDemande}">Delete</a></td>
+			</tr>
+		</c:forEach>
+	</table>
+
+
 <c:import url="footer.jsp" />
 </body>
 </html>
