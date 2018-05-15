@@ -14,4 +14,6 @@ public interface ClientDAO {
 	public Client updateClient(Client client);
 
 	public Client getClient(int idUtilisateur);
+	
+	public Client recupClient(String nomUtilisateur, String motDePasse);
 }

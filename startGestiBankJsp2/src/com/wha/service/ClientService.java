@@ -14,4 +14,6 @@ public interface ClientService {
 	public Client getClient(int idUtilisateur);
 
 	public Client updateClient(Client client);
+	
+	public Client recupClient(String nomUtilisateur, String motDePasse);
 }

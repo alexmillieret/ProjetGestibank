@@ -46,5 +46,9 @@ public class ClientServiceImpl implements ClientService {
     public void setClientDAO(ClientDAO clientDAO) {
         this.clientDAO = clientDAO;
     }
+    
+    public Client recupClient(String nomUtilisateur, String motDePasse) {
+    	return clientDAO.recupClient(nomUtilisateur, motDePasse);
+    }
 
 }

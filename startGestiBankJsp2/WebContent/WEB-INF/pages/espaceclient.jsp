@@ -14,9 +14,8 @@
 Bienvenue dans l'espace client
 </div>
 <div class="bodyclient">
-<form name="verscompte" action="Controller?page=compte" method= "post">
+
 <input class="myButton" type="submit" value="Demande de modification / Ajout de comptes">
-</form>
 </div>
 <div class="bodyclient">
 <input class="myButton" type="submit" value="Effectuer une transation">
@@ -25,7 +24,29 @@ Bienvenue dans l'espace client
 <input class="myButton" type="submit" value="Voir mes notifications">
 </div>
 <div class="bodyclient">
+<form name="listeCompte" action="listeCompte" method= "post">
 <input class="myButton" type="submit" value="Visualiser mes comptes">
+</form>
+<div align="center">
+		<h1>Compte</h1>
+		
+		<table border="1">
+${client.getCompte()}
+			<th>Date</th>
+			<th>RIB</th>
+			<th>Solde</th>
+
+			<c:forEach var="compte" items="${client.getCompte()}">
+				<tr>
+
+					<td>${compte.dateCreation}</td>
+					<td>${compte.rib}</td>
+					<td>${compte.solde}</td>
+
+				</tr>
+			</c:forEach>
+		</table>
+	</div>
 </div>
 <c:import url="footer.jsp" />
 </body>

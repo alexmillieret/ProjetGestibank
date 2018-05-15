@@ -3,6 +3,7 @@ package com.wha.controller;
 import java.io.IOException;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -87,6 +88,8 @@ public class ControllerPrincipal {
 		agent.setMail("agent@free.fr");
 		agent.setNom("agent");
 		agent.setPrenom("agent");
+		agent.setNomUtilisateur("agent");
+		agent.setMotDePasse("agent");
 		agentService.addAgent(agent);
 
 		model.setViewName("accueil");
@@ -131,8 +134,9 @@ public class ControllerPrincipal {
 				model.addObject("admin", utilisateur);
 				return model;
 			} else if (role.equals("CLIENT")) {
+				Client client= clientService.recupClient(nomUtilisateur, motDePasse);
 				ModelAndView model = new ModelAndView("espaceclient");
-				model.addObject("client", utilisateur);
+				model.addObject("client", client);
 				return model;
 			} else if (role.equals("AGENT")) {
 				ModelAndView model = new ModelAndView("espaceAgent");
@@ -146,10 +150,18 @@ public class ControllerPrincipal {
 		model.addObject("message", message);
 		return model;
 	}
+	
+	 @RequestMapping(value = "/listeCompte", method = RequestMethod.POST)
+	 public ModelAndView listeCompte(@ModelAttribute Client client) {
+		Set<Compte> listeCompte = client.getCompte();
+		ModelAndView model = new ModelAndView("listeComptes");
+		model.addObject("listeCompte", listeCompte);
+		return model; 
+	 }
 	/*
 	 * @RequestMapping(value = "/") public ModelAndView listEmployee(ModelAndView
-	 * model) throws IOException { List<Employee> listEmployee =
-	 * employeeService.getAllEmployees(); model.addObject("listEmployee",
+	 * model) throws IOException { 
+	 * List<Employee> listEmployee = employeeService.getAllEmployees(); model.addObject("listEmployee",
 	 * listEmployee); model.setViewName("home"); return model; }
 	 * 
 	 * @RequestMapping(value = "/newEmployee", method = RequestMethod.GET) public

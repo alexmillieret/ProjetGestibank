@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.wha.model.Client;
+import com.wha.model.Utilisateur;
 @Repository
 public class ClientDAOImpl implements ClientDAO {
 
@@ -32,6 +33,10 @@ public class ClientDAOImpl implements ClientDAO {
             this.sessionFactory.getCurrentSession().delete(client);
         }
  
+    }
+    @Override
+    public Client recupClient(String nomUtilisateur, String motDePasse) {
+        return (Client) sessionFactory.getCurrentSession().createQuery("from Client as client where nomUtilisateur='"+nomUtilisateur+"' and motDePasse='"+motDePasse+"'").uniqueResult();
     }
  
     public Client getClient(int clientId) {

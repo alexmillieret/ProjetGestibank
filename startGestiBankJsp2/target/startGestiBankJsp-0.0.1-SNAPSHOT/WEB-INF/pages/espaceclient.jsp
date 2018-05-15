@@ -14,9 +14,8 @@
 Bienvenue dans l'espace client
 </div>
 <div class="bodyclient">
-<form name="verscompte" action="Controller?page=compte" method= "post">
+
 <input class="myButton" type="submit" value="Demande de modification / Ajout de comptes">
-</form>
 </div>
 <div class="bodyclient">
 <input class="myButton" type="submit" value="Effectuer une transation">
@@ -25,7 +24,10 @@ Bienvenue dans l'espace client
 <input class="myButton" type="submit" value="Voir mes notifications">
 </div>
 <div class="bodyclient">
+<form name="listeCompte" action="listeCompte" method= "post">
 <input class="myButton" type="submit" value="Visualiser mes comptes">
+</form>
+${client.getCompte()}
 </div>
 <c:import url="footer.jsp" />
 </body>
