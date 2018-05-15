@@ -18,6 +18,7 @@ import com.wha.model.Administrateur;
 import com.wha.model.Adresse;
 import com.wha.model.Agent;
 import com.wha.model.Client;
+import com.wha.model.Compte;
 import com.wha.model.Demande;
 import com.wha.model.Employee;
 import com.wha.model.Utilisateur;
@@ -30,6 +31,7 @@ import com.wha.service.AdministrateurService;
 import com.wha.service.AdresseService;
 import com.wha.service.AgentService;
 import com.wha.service.ClientService;
+import com.wha.service.CompteService;
 import com.wha.service.DemandeService;
 
 @Controller
@@ -50,6 +52,8 @@ public class ControllerPrincipal {
 	private AgentService agentService;
 	@Autowired
 	private DemandeService demandeService;
+	@Autowired
+	private CompteService compteService;
 
 	@RequestMapping(value = "/")
 	public ModelAndView accueil(ModelAndView model) {
@@ -62,8 +66,14 @@ public class ControllerPrincipal {
 		client.setMotDePasse("client");
 		Adresse adresseClient = new Adresse();
 		adresseClient.setVille("Annecy");
+		Compte compte = new Compte("012321456", 120.00, new Date());
+		client.getCompte().add(compte);
 		client.setAdresse(adresseClient);
 		clientService.addClient(client);
+		compte.setClient(client);
+		compteService.addCompte(compte);
+		
+
 		// cr�ation d'un admin au d�marrage
 		Administrateur admin = new Administrateur();
 		admin.setMail("admin@free.fr");

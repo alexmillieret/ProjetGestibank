@@ -30,7 +30,7 @@ public class Client extends Utilisateur implements Serializable{
 	
 	
 	@OneToMany (mappedBy="client")
-	private Set<Compte> comptes;
+	private Set<Compte> comptes =new HashSet<Compte>();
 	//Zone Getters/Setters
 	
 

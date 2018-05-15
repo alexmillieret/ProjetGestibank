@@ -45,8 +45,8 @@ public class UtilisateurServiceImpl implements UtilisateurService {
 	}
 
 	@Override
-	public Utilisateur getUtilisateur(int Utilisateurid) {
-		return null;
+	public Utilisateur getUtilisateur(int utilisateurid) {
+		return utilisateurDAO.getUtilisateur(utilisateurid);
 	}
 	
 	public void setUtilisateurDAO(UtilisateurDAO utilisateurDAO){

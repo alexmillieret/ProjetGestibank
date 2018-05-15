@@ -6,6 +6,7 @@ C:\Users\alexm\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\dao\AdresseDAO
 C:\Users\alexm\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\dao\AgentDAO.java
 C:\Users\alexm\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\dao\UtilisateurDAOImpl.java
 C:\Users\alexm\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\model\CompteRemun.java
+C:\Users\alexm\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\service\CompteServiceImpl.java
 C:\Users\alexm\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\model\Demande.java
 C:\Users\alexm\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\controller\ControllerPrincipal.java
 C:\Users\alexm\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\dao\AdministrateurDAO.java
@@ -33,9 +34,12 @@ C:\Users\alexm\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\service\Employ
 C:\Users\alexm\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\dao\AdresseDAO.java
 C:\Users\alexm\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\model\Utilisateur.java
 C:\Users\alexm\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\dao\EmployeeDAO.java
+C:\Users\alexm\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\dao\CompteDAOImpl.java
 C:\Users\alexm\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\dao\DemandeDAOImpl.java
 C:\Users\alexm\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\dao\AdministrateurDAOImpl.java
 C:\Users\alexm\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\model\CompteDecouvert.java
 C:\Users\alexm\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\model\Client.java
 C:\Users\alexm\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\service\AdresseService.java
+C:\Users\alexm\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\service\CompteService.java
+C:\Users\alexm\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\dao\CompteDAO.java
 C:\Users\alexm\git\ProjetGestibank\startGestiBankJsp2\src\com\wha\dao\ClientDAOImpl.java

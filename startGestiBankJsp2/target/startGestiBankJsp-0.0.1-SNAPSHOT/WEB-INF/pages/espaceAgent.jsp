@@ -15,25 +15,5 @@
 			src="${pageContext.request.contextPath}/resources/images/logo2.png"
 			alt="logo2" /> Bienvenue dans l'espace Agent
 	</div>
-
-
-
-	<h1>Test recup demandes</h1>
-
-	<th>Id</th>
-	<th>Nom</th>
-
-	<table border="1">
-
-		<c:forEach var="demande" items="${listDemande}">
-			<tr>
-				<td>${demande.idDemande}</td>
-				<td>${demande.nom}</td>
-				<td><a href="editEmployee?id=${demande.idDemande}">Edit</a>
-					&nbsp;&nbsp;&nbsp;&nbsp; <a
-					href="deleteDemande?id=${demande.idDemande}">Delete</a></td>
-			</tr>
-		</c:forEach>
-	</table>
 </body>
 </html>
