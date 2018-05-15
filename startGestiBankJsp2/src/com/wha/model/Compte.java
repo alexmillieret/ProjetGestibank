@@ -14,6 +14,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
@@ -35,19 +36,28 @@ public class Compte implements Serializable {
 	
 	private Date dateCreation;
 	
-	private List<Mouvement> listeMouvements;
+	
+	@ManyToOne
+	private Client client;
 
 	// Constructeur
+
+	public Client getClient() {
+		return client;
+	}
+
+	public void setClient(Client client) {
+		this.client = client;
+	}
 
 	public Compte() {
 	}
 
-	public Compte(String rib, double solde, Date dateCreation, List<Mouvement> listeMouvements) {
+	public Compte(String rib, double solde, Date dateCreation) {
 		super();
 		this.rib = rib;
 		this.solde = solde;
 		this.dateCreation = dateCreation;
-		this.listeMouvements = listeMouvements;
 	}
 	// GET SET
 
@@ -73,14 +83,6 @@ public class Compte implements Serializable {
 
 	public void setDateCreation(Date dateCreation) {
 		this.dateCreation = dateCreation;
-	}
-
-	public List<Mouvement> getListeMouvements() {
-		return listeMouvements;
-	}
-
-	public void setListeMouvements(List<Mouvement> listeMouvements) {
-		this.listeMouvements = listeMouvements;
 	}
 
 }

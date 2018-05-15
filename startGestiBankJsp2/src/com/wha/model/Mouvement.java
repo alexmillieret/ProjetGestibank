@@ -10,7 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "MOUV")
 public class Mouvement {
 
 	@Id
@@ -19,8 +18,6 @@ public class Mouvement {
 	private double montant;
 	
 	private Date date;
-
-	private List<Mouvement> listeMouvements;
 	
 	
 	public Mouvement() {

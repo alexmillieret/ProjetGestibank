@@ -41,11 +41,7 @@ public class ControllerPrincipal {
 	}
 
 	@Autowired
-	private EmployeeService employeeService;
-	@Autowired
 	private ClientService clientService;
-	@Autowired
-	private AdresseService adresseService;
 	@Autowired
 	private UtilisateurService utilisateurService;
 	@Autowired
@@ -57,7 +53,7 @@ public class ControllerPrincipal {
 
 	@RequestMapping(value = "/")
 	public ModelAndView accueil(ModelAndView model) {
-		// crétion d'un client au démarrage
+		// crï¿½tion d'un client au dï¿½marrage
 		Client client = new Client();
 		client.setMail("alex.millieret@free.fr");
 		client.setNom("millieret");
@@ -68,7 +64,7 @@ public class ControllerPrincipal {
 		adresseClient.setVille("Annecy");
 		client.setAdresse(adresseClient);
 		clientService.addClient(client);
-		// création d'un admin au démarrage
+		// crï¿½ation d'un admin au dï¿½marrage
 		Administrateur admin = new Administrateur();
 		admin.setMail("admin@free.fr");
 		admin.setNom("admin");
@@ -76,7 +72,7 @@ public class ControllerPrincipal {
 		admin.setMotDePasse("admin");
 		admin.setPrenom("admin");
 		administrateurService.addAdministrateur(admin);
-		// création d'un agent au démarrage
+		// crï¿½ation d'un agent au dï¿½marrage
 		Agent agent = new Agent();
 		agent.setMail("agent@free.fr");
 		agent.setNom("agent");

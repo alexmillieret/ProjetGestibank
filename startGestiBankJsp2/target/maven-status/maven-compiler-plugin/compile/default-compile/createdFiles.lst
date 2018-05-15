@@ -19,7 +19,6 @@ com\wha\model\Administrateur.class
 com\wha\model\DemandeVirement.class
 com\wha\service\UtilisateurService.class
 com\wha\dao\UtilisateurDAOImpl.class
-com\wha\model\Mouvement.class
 com\wha\service\AdresseServiceImpl.class
 com\wha\dao\AgentDAOImpl.class
 com\wha\service\AdresseService.class
